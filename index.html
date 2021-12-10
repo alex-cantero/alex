@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <main id="root">
+      <div id="stars"></div>
+      <section id="welcome-section" class="main-section">
+        <h1>Hi. I am <span class="alex">A</span>lex.</h1>
+        <h2><span class="developer">Security Analyst. Coder. Entrepeneur<span class="dot">.</span></span></h2>
+        <div id="hireme-div">
+          <div id="hireme-cta"></div>
+          <!-- Trigger/Open The Modal -->
+          <button id="my-btn">hire me</button>
+          <!-- The Modal -->
+          <div id="hire-me" class="modal">
+          <!-- Modal content -->
+          <div id="hireme-modal" class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+            </div>
+            <div id="modal-body">
+              <form id="hireme-form">
+                <div>
+                  <input type="name" placeholder="name" id="thename">
+                  <input type="email" placeholder="email" id="theemail" required="required">
+                </div>
+                <div class="submit">
+                  <textarea id="thecomments" placeholder="comments (optional)"></textarea>
+                  <button id="hireme">Send</button>
+                </div>
+              </form>
+            </div>
+            <div id="modal-footer">
+              <h3>Thank you! We'll be in touch hortly.</h3>
+            </div>
+          </div>
+          <div id="result"></div>
+          </div>
+        </div>
+        <div id="navigation">
+          <nav id="controls">
+            <button id="up"></button>
+            <button id="down" class="hide"></button>
+            <button id="left" class="hide"></button>
+            <button id="right" class="hide"></button>
+          </nav>
+        </div>
+      </section>
+      <section id="quotes"></section>
+    </main>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
