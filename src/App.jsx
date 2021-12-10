@@ -94,9 +94,9 @@ class Quotes extends React.Component {
     let fontcolor = colors[this.state.color];
     let quoteColor = rgbacolors[this.state.color];
     return (
-      <div style={{background: "rgba"+quoteColor}}>
+      <div>
         {this.state.isLoaded &&
-        <blockquote style={{color: "rgba"+fontcolor}} id={'text'}>{this.state.quotes[this.state.randomIndex].quote}<span id={'author'}> -{this.state.quotes[this.state.randomIndex].author}</span></blockquote>}
+        <blockquote id={'text'}>{this.state.quotes[this.state.randomIndex].quote}<span id={'author'}> -{this.state.quotes[this.state.randomIndex].author}</span></blockquote>}
         {this.state.isLoaded &&
         <ul className={"buttons"}>
           <li><a className="button" id={'tweet-quote'} style={{background: "rgba"+quoteColor}} target={'_blank'} href={"https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + encodeURIComponent('"' + this.state.quotes[this.state.randomIndex].quote + '" ' + this.state.quotes[this.state.randomIndex].author)}>Tweet this!</a></li>
@@ -184,6 +184,25 @@ function sendEmail() {
 	}
 }
 let goUp = document.getElementById("up");
+let goDown = document.getElementById("down");
+let nav = document .getElementsByClassName("nav");
+let panes = document .getElementById("panes");
+
 goUp.onclick = () => {
-  console.log('sdf');
+  document.getElementById("welcome-section").setAttribute("style","height:70vh");
+  panes.classList.add("visible");
+  for(let elem of nav){
+  // remove class from each div
+    elem.classList.remove("hide");
+    goUp.classList.add("hide");
+  }
+}
+goDown.onclick = () => {
+  document.getElementById("welcome-section").setAttribute("style","height:90vh");
+  panes.classList.remove("visible");
+  for(let elem of nav){
+  // remove class from each div
+    elem.classList.add("hide");
+    goUp.classList.remove("hide");
+  }
 }

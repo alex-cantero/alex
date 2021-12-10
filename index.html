@@ -12,7 +12,20 @@
       <section id="welcome-section" class="main-section">
         <h1>Hi. I am <span class="alex">A</span>lex.</h1>
         <h2><span class="developer">Security Analyst. Coder. Entrepeneur<span class="dot">.</span></span></h2>
-        <div id="hireme-div">
+
+        <div id="navigation">
+          <nav id="controls">
+            <button id="up" class="nav"></button>
+            <button id="down" class="nav hide"></button>
+            <button id="left" class="nav hide"></button>
+            <button id="right" class="nav hide"></button>
+          </nav>
+        </div>
+      </section>
+
+      <section id="panes">
+        <div id="quotes" class="pane active"></div>
+        <div id="hireme-div" class="pane">
           <div id="hireme-cta"></div>
           <!-- Trigger/Open The Modal -->
           <button id="my-btn">hire me</button>
@@ -42,16 +55,8 @@
           <div id="result"></div>
           </div>
         </div>
-        <div id="navigation">
-          <nav id="controls">
-            <button id="up"></button>
-            <button id="down" class="hide"></button>
-            <button id="left" class="hide"></button>
-            <button id="right" class="hide"></button>
-          </nav>
-        </div>
       </section>
-      <section id="quotes"></section>
+
     </main>
     <script type="module" src="/src/main.jsx"></script>
   </body>

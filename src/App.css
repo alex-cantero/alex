@@ -17,7 +17,7 @@ code {
 /****************************************************/
 :root {
   --color: #989898;
-  --button: rgb(155, 15, 0);
+  --button: #0b3db8;
 }
 .hide {
   display: none;
@@ -42,22 +42,19 @@ main {
   top:0;
   z-index: 2;
 }
-
 section {
-  height: 100vh;
+  height: 90vh;
 }
-
 #welcome-section {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     position: relative;
-    width: 50vw;
+    width: 80vw;
     display: flex;
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
 }
-
 #welcome-section button, a.button {
   cursor: pointer;
   margin: 0;
@@ -78,8 +75,9 @@ h1,h2 {
   text-align: left;
   font-size: 2em;
   margin: 0;
-  padding: 1vw 1vw 1vw 2vw;
+  padding: 1px;
   width: fit-content;
+  background: rgba(0,0,0,0.2);
 }
 .alex {
     animation-duration: 2s;
@@ -161,7 +159,7 @@ h1,h2 {
     height: 100%;
   }
   .star {
-    background-color: white;
+    background-color: darkgoldenrod;
     border-radius: 50%;
     animation-iteration-count: infinite;
     animation-name: twinkle;
@@ -251,41 +249,56 @@ h1,h2 {
   max-width: 14%;
   min-width: 10%;
 }
-#quotes {
-    pointer-events: none;
-    width: 100%;
+#panes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: stretch;
     height: 30vh;
+    margin-top: 10vh;
+}
+#panes .pane {
+  display: none;
+}
+#panes .pane.active {
+  display: block;
+}
+#panes.visible {
+  margin-top: 0;
 }
 #quotes > div {
-    text-align: center;
-    overflow: hidden;
     pointer-events: none;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 #quotes blockquote {
     font-size: 1.5em;
     display: block;
     overflow: hidden;
-    background: rgba(255,255,255,0.25);
+    background: rgba(0, 0, 0, 0.75);
     border-radius: 2vw 2vw 0 0;
     padding: 2vw;
     position: relative;
-    height: 100%;
 }
 #quotes blockquote span {
-  display: block;
-  font-size: 0.75em;
-  text-align: right;
-  margin: 1vw 0;
+    display: block;
+    font-size: 0.75em;
+    text-align: right;
+    margin: 1% 5% 0 0;
 }
 #quotes .buttons {
-  border-radius: 0 0 2vw 2vw;
-  background: rgba(255,255,255,0.75);
-  overflow: hidden;
-  padding: 2vw;
-  display: flex;
-  flex-flow: row;
-  place-content: space-around;
+    border-radius: 0 0 2vw 2vw;
+    overflow: hidden;
+    padding: 2vw;
+    display: flex;
+    flex-flow: row;
+    place-content: space-around;
+    position: relative;
+    margin-top: 2%;
 }
 #quotes .buttons li a {
   border-radius: 5px;
@@ -454,20 +467,18 @@ h1,h2 {
     width: 32px;
     height: 32px;
     border: 0;
-    background: url('public/button.png');
+    background: url('button.png');
     background-size: contain;
     cursor: pointer;
   }
-  
   .slider::-moz-range-thumb {
     width: 32px;
     height: 32px;
     border: 0;
-    background: url('public/button.png');
+    background: url('button.png');
     background-size: contain;
     cursor: pointer;
   }
-
   /*navigation*/
   #navigation {
     position:absolute;
@@ -570,9 +581,10 @@ h1,h2 {
   margin-top: -13px;
 }
 #navigation #controls #down {
-  left: 50%;
-  bottom: 0;
-  margin-left: -13px;
+    left: 50%;
+    top: 50%;
+    margin-left: -13px;
+    margin-top: -13px;
 }
 #navigation #controls #left {
   left: 0;
@@ -600,19 +612,9 @@ h1,h2 {
   transform: rotate(180deg);
 }
 
-  /**********************/
-  @media (max-width: 1023px) {
-    form {
-      display: block;
-      padding: 0;
-    }
-    form input[type="name"], form input[type="email"] {
-      height: 6vw;
-      width: 100%;
-      margin-bottom: 1%;
-    }
-    form textarea {
-      height: 16vw;
-      width: 100%;
-    }
+/**********************/
+@media (min-width: 1024px) {
+  #quotes > div {
+    justify-content: center;
   }
+}
